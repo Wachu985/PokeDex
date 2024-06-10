@@ -22,7 +22,8 @@ class CenterDataPokemon extends StatelessWidget {
           FadeInLeft(
               delay: const Duration(milliseconds: 1000),
               child: ElementWidget(
-                  title: '${pokemon!.height / 10} M', subtitle: 'Height')),
+                  title: '${(pokemon!.height * 0.1).toStringAsFixed(1)} M',
+                  subtitle: 'Height')),
           FadeInDown(
             delay: const Duration(milliseconds: 500),
             child: CircleAvatar(
@@ -36,7 +37,7 @@ class CenterDataPokemon extends StatelessWidget {
           FadeInRight(
             delay: const Duration(milliseconds: 1000),
             child: ElementWidget(
-              title: '${pokemon!.weight * 0.1} KG',
+              title: '${(pokemon!.weight * 0.1).toStringAsFixed(1)} KG',
               subtitle: 'Weight',
             ),
           )

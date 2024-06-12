@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:pokedex_clean/features/pokedex/presentation/screens/about_screen.dart';
 import 'package:pokedex_clean/features/pokedex/presentation/screens/detail_pokemon.dart';
 import 'package:pokedex_clean/features/pokedex/presentation/screens/favorites_pokemon.dart';
 import 'package:pokedex_clean/features/pokedex/presentation/screens/home_screen.dart';
@@ -10,6 +11,10 @@ final appRouter = GoRouter(
         path: '/',
         builder: (context, state) => const HomeScreen(),
         routes: [
+          GoRoute(
+            path: 'about',
+            builder: (context, state) => const AboutScreen(),
+          ),
           GoRoute(
             path: 'pokemon-detail',
             builder: (context, state) => const DetailPokemon(),
@@ -24,6 +29,6 @@ final appRouter = GoRouter(
           builder: (context, state) => const DetailPokemon(),
         )
       ],
-    )
+    ),
   ],
 );

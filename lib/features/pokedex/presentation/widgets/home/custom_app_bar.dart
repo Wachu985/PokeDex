@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -8,16 +8,15 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SliverAppBar(
+    return SliverAppBar(
       elevation: 2.0,
 
       actions: [
-        // TODO: Corregir Esto
         Padding(
-          padding: EdgeInsets.all(10.0),
-          child: CircleAvatar(
-            backgroundImage: CachedNetworkImageProvider(
-                'https://lh5.googleusercontent.com/proxy/dG_zKqcKHlrISWacq_2i-oW0_U7cmnMPq6nDX7TGVr_76KVva_nMr0SSnkpSBO0vzKRADGSDT2RmVGImjzaGxjO8CkjnGeVH6r-DeXe54D9eNxy5IsiuwS0Zzcr5wNVg7j83W0o5FMRfbQ'),
+          padding: const EdgeInsets.all(10.0),
+          child: IconButton(
+            onPressed: () => context.go('/about'),
+            icon: const Icon(Icons.settings_rounded),
           ),
         )
       ],
@@ -26,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
       expandedHeight: 200.0,
       floating: false,
       pinned: true,
-      flexibleSpace: FlexibleSpaceBar(
+      flexibleSpace: const FlexibleSpaceBar(
         centerTitle: true,
         expandedTitleScale: 2.5,
         title: Padding(

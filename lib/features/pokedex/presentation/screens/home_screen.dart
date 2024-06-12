@@ -83,6 +83,16 @@ class HomeScreen extends StatelessWidget {
                         ),
                         itemCount: state.listPokemons.length,
                       ),
+                if (state.isInfinityLoading)
+                  const SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Center(
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                    ),
+                  )
               ],
             ),
           ],

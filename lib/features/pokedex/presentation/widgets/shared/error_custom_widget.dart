@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,21 +18,29 @@ class ErrorCustomWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset(
-          height: 250,
-          "assets/undraw_warning_re_eoyh.svg",
-          semanticsLabel: 'Acme Logo',
+        ElasticIn(
+          child: SvgPicture.asset(
+            height: 250,
+            "assets/undraw_warning_re_eoyh.svg",
+            semanticsLabel: 'Acme Logo',
+          ),
         ),
-        Text(
-          text,
-          style: const TextStyle(fontSize: 25),
+        FadeIn(
+          delay: const Duration(milliseconds: 700),
+          child: Text(
+            text,
+            style: const TextStyle(fontSize: 25),
+          ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FilledButton(
-            onPressed: onPressed,
-            style: FilledButton.styleFrom(elevation: 5),
-            child: Text(buttomText, style: const TextStyle(fontSize: 18)),
+        FadeIn(
+          delay: const Duration(milliseconds: 700),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FilledButton(
+              onPressed: onPressed,
+              style: FilledButton.styleFrom(elevation: 5),
+              child: Text(buttomText, style: const TextStyle(fontSize: 18)),
+            ),
           ),
         )
       ],

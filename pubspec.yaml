@@ -25,6 +25,7 @@ dependencies:
   responsive_framework: ^1.4.0
   animate_do: ^3.3.4
   flutter_native_splash: ^2.4.0
+  url_launcher: ^6.3.0
   
 
 dev_dependencies:

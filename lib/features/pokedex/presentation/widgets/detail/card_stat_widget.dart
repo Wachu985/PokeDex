@@ -20,7 +20,7 @@ class CardStatWidget extends StatelessWidget {
           Text(stat.name.capitalize(), style: const TextStyle(fontSize: 17)),
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Text(
               '${stat.baseStat}',
               style: const TextStyle(fontSize: 18, color: Colors.amber),
